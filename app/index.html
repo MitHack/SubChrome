@@ -26,7 +26,21 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <div ng-view=""></div>
+<section ng-controller="MainCtrl" >
+  <h1>Permissions</h1>
+  <dl>
+    <dt ng-repeat-start="(permGroupId, permGroup) in permissions">{{ permGroupId }}</dt>
+    <dd ng-repeat-end>
+      <div>{{ permGroup.msg }}</div>
+      <dl>
+        <dt ng-repeat-start="(permId, perm) in permGroup.perms">{{ permId }}</dt>
+        <dd ng-repeat-end>
+          {{ perm.msg }}
+        </dd>
+      </dl>
+    </dd>
+  </dl>
+</section>
     <script>
       // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -42,6 +56,7 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/permissions.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
 </body>

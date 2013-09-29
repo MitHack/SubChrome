@@ -6,10 +6,10 @@ function hereDoc(f) {
 }
 
 var app = angular.module('INF8405App', []);
-app.config(function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
-    })
-});
+// app.config(function ($routeProvider) {
+//   $routeProvider
+//     .when('/', {
+//       templateUrl: 'views/main.html',
+//       controller: 'MainCtrl'
+//     })
+// });
