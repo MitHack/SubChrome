@@ -1,5 +1,4 @@
 app.factory('androidapps', function() {
-
     var all_ = [
         { 
             "id": "com.facebook.katana",
@@ -7,9 +6,65 @@ app.factory('androidapps', function() {
             "name": "Facebook",
             "approval": "frown",
             "perms": {
+                "accounts" : {
+                    "find": "minus",
+                    "create_set": "minus",
+                    "add_remove": "remove"
+                },
+                "location": {
+                    "precise": "minus",
+                    "approximate": "minus"
+                },
                 "network": {
-                    "view": "minus", 
-                    "full": "minus"
+                    "view": "ok",
+                    "data": "ok",
+                    "full": "ok",
+                    "download": "remove",
+                    "view_wifi": "remove"
+                },
+                "phone_calls": {
+                    "call": "remove",
+                    "status": "remove"
+                },
+                "storage": {
+                    "modify_delete": "remove"
+                },
+                "system": {
+                    "shortcuts": "ok",
+                    "read_home": "remove",
+                    "test_protected": "remove",
+                    "battery": "remove"
+                },
+                "app_info": {
+                    "startup": "minus",
+                    "running_apps": "minus",
+                    "reorder_apps": "minus"
+                },
+                "camera": {
+                    "pics_vids": "remove"
+                },
+                "other_apps": {
+                    "draw_over": "remove"
+                },
+                "mic": {
+                    "record": "remove"
+                },
+                "social": {
+                    "write_call_log": "remove",
+                    "read_call_log": "remove",
+                    "read_contacts": "remove",
+                    "modify_contants": "remove"
+                },
+                "battery": {
+                    "no_sleep": "remove",
+                    "vibration": "minus"
+                },
+                "statusbar": {
+                    "expand_collapse": "minus"     
+                },
+                "sync": {
+                    "toogle": "remove",
+                    "read": "remove"
                 }
             }
         },
@@ -36,30 +91,3 @@ app.factory('androidapps', function() {
 	}
   }
 });
-
-
-// var app_perms = {
-//     "network": ["view", "full"],
-//     "phone_calls": ["call"]
-// }
-
-
-// var mypermissions = {
-//     "network": {
-//         "text": "Network communication",
-//         "perms": {
-//             "view": "view network connections",
-//             "data": "receive data from Internet",
-//             "full": "full network access",
-//             "download": "download files without notification",
-//             "view_wifi": "view Wi-Fi connections"
-//         }
-//     },
-//     "phone_calls": {
-//         "text": "Phone calls",
-//         "perms": {
-//             "call": "directly call phone numbers",
-//             "status": "read phone status and identity"
-//         }
-//     }
-// }

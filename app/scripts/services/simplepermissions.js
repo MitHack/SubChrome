@@ -4,7 +4,7 @@ app.factory('simplepermissions', function() {
 	      return {
 "accounts" : {
 	"text": "Your accounts",
-	"img": "",
+	"icon": "user",
 	"perms": {
 		"find": "find accounts on the device",
 		"create_set": "create accounts and set passwords",
@@ -13,6 +13,7 @@ app.factory('simplepermissions', function() {
 },
 "location": {
 	"text": "Your location",
+	"icon": "location-arrow",
 	"perms": {
 		"precise": "precise location (GPS and network-based)",
 		"approximate": "approximate location (network-based)"
@@ -31,6 +32,7 @@ app.factory('simplepermissions', function() {
 },
 "phone_calls": {
 	"text": "Phone calls",
+	"icon": "phone",
 	"perms": {
 		"call": "directly call phone numbers",
 		"status": "read phone status and identity"
@@ -38,12 +40,14 @@ app.factory('simplepermissions', function() {
 },
 "storage": {
 	"text": "Storage",
+	"icon": "folder-close",
 	"perms": {
 		"modify_delete": "modify or delete the contents of your USB storage"
 	}	
 },
 "system": {
 	"text": "System tools",
+	"icon": "gears",
 	"perms": {
 		"shortcuts": "install shortcuts",
 		"read_home": "read Home settings and shortcuts",
@@ -53,6 +57,7 @@ app.factory('simplepermissions', function() {
 },
 "app_info": {
 	"text": "Your applications information",
+	"icon": "android",
 	"perms": {
 		"startup": "run at startup",
 		"running_apps": "retrieve running apps",
@@ -62,24 +67,28 @@ app.factory('simplepermissions', function() {
 },
 "camera": {
 	"text": "Camera",
+	"icon": "camera",
 	"perms": {
 		"pics_vids": "take pictures and videos"
 	}
 },
 "other_apps": {
 	"text": "Other Application UI",
+	"icon": "android",
 	"perms": {
 		"draw_over": "draw over other apps"
 	}	
 },
 "mic": {
 	"text": "Microphone",
+	"icon": "microphone",
 	"perms": {
 		"record": "record audio"
 	}
 },
 "social": {
 	"text": "Your social information",
+	"icon": "thumbs-up",
 	"perms": {
 		"write_call_log": "write call log",
 		"read_call_log": "read call log",
@@ -89,6 +98,7 @@ app.factory('simplepermissions', function() {
 },
 "battery": {
 	"text": "Affects Battery",
+	"icon": "mobile-phone",
 	"perms": {
 		"no_sleep": "prevent device from sleeping",
 		"vibration": "control vibration"
@@ -96,12 +106,14 @@ app.factory('simplepermissions', function() {
 },
 "statusbar": {
 	"text": "Status Bar",
+	"icon": "collapse",
 	"perms": {
 		"expand_collapse": "expand/collapse status bar"		
 	}	
 },
 "sync": {
 	"text": "Sync Settings",
+	"icon": "repeat",
 	"perms": {
 		"toogle": "toggle sync on and off",
 		"read": "read sync settings"

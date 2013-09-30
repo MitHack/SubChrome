@@ -7,7 +7,6 @@ app.controller('MainCtrl', function ($scope, androidapps, simplepermissions) {
 	$scope.selected_app = null;
 	$scope.term = "";
 
-
 	function merge(selected_app){
 		return _.transform(selected_app.perms, function(result, perms, group){ 
 		    result[permissions[group].text] = result[permissions[group].text] || {};
