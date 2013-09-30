@@ -14,11 +14,21 @@ header {
 		    height: 40px;
 		}
 
-		 ul {
-		    background-color: #FFF;
+		.dropdown {
+			margin-top: -20px;
+		}
+
+		ul {
+		    background-color: @earth;
 		    margin: 0;
 		    padding: 0;
 		    list-style: none;
+		    border-bottom-right-radius: 5px;
+		    border-bottom-left-radius: 5px;
+		}
+
+		li:last-of-type{
+			padding-bottom: 20px;
 		}
 
 		.results {
@@ -28,10 +38,6 @@ header {
 
 		.results.active {
 		    opacity: 1;
-		}
-
-		 .results.active .name {
-		    color: black;
 		}
 
 		.results p {

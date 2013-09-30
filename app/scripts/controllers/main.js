@@ -12,8 +12,9 @@ app.controller('MainCtrl', function ($scope, androidapps, simplepermissions) {
 		return _.transform(selected_app.perms, function(result, perms, group){ 
 		    result[permissions[group].text] = result[permissions[group].text] || {};
 		    result[permissions[group].text].icon = permissions[group].icon
-		    result[permissions[group].text].perm = _.map(perms, function(perm){ 
-		        return permissions[group].perms[perm]; 
+		    result[permissions[group].text].perm = _.transform(perms, function(result,approval, perm){ 
+		    	result[permissions[group].perms[perm]] = approval;
+		        return result;
 		    });
 		    return result;
 		});
@@ -30,5 +31,5 @@ app.controller('MainCtrl', function ($scope, androidapps, simplepermissions) {
 		$scope.term = "";
 	};
 
-	$scope.select($scope.apps[1]);
+	$scope.select($scope.apps[0]);
 });

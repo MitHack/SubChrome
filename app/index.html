@@ -47,15 +47,15 @@
   </header>
 
   <article class="app" ng-show="selected_app !== null">
-    <img ng-src="{{ selected_app.img }}"><h3 class="name">{{ selected_app.name }}</h3>
+    <i class="icon-{{ selected_app.approval }}"></i><h3 class="name">{{ selected_app.name }}</h3>
     <dl>
       <dt class="group" ng-repeat-start="(group_text, group) in selected_app.permissions">
         <i class="icon-globe"></i>{{ group_text }}
       </dt>
       <dd ng-repeat-end>
         <ol>
-          <li class="perm" ng-repeat="perm_text in group.perm">
-            {{ perm_text }}
+          <li class="perm" ng-repeat="(text, approval) in group.perm">
+            <i class="icon-{{ approval }}"></i>{{ text }}
           </li>
         </ol>
       </dd>

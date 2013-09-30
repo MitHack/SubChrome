@@ -1,21 +1,41 @@
 .app {
 	margin: 20px;
+
+	& > i {
+		font-size: 80px;
+		vertical-align: middle;
+	}
+
+	.icon-ok, .icon-smile {
+		color: green;
+	}
+
+	.icon-meh, .icon-minus {
+		color: yellow;
+	}
+
+	.icon-frown, .icon-remove {
+		color: red;
+	}
+
 	img {
 		width: 128px;
 		height: 128px;
 		margin-right: 10px;
 		display: inline-block;
 	}
+
 	.name {
 		display: inline-block;
 		vertical-align: middle;
 		font-size: 80px;
 	}
 
+	i {
+		margin-right: 10px;
+	}
+
 	.group {
-		i {
-			margin-right: 10px;
-		}
 		font-size: 64px;
 	}
 	.perm {
