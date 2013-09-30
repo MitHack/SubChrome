@@ -297,11 +297,6 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
-      }
-    },
     ngmin: {
       dist: {
         files: [{
@@ -329,8 +324,12 @@ module.exports = function (grunt) {
           ] 
         }
       },
-      div : {
-        // ...
+      dist : {
+        files: {
+          '<%= yeoman.dist %>/styles/main.css': [
+            '<%= yeoman.app %>/styles/main.less'
+          ] 
+        }
       }
     }
   });
@@ -365,7 +364,6 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'copy:dist',
-    'cdnify',
     'ngmin',
     'cssmin',
     'uglify',
