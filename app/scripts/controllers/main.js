@@ -10,7 +10,9 @@ app.controller('MainCtrl', function ($scope, androidapps, simplepermissions) {
 
 	function merge(selected_app){
 		return _.transform(selected_app.perms, function(result, perms, group){ 
-		    result[permissions[group].text] = _.map(perms, function(perm){ 
+		    result[permissions[group].text] = result[permissions[group].text] || {};
+		    result[permissions[group].text].icon = permissions[group].icon
+		    result[permissions[group].text].perm = _.map(perms, function(perm){ 
 		        return permissions[group].perms[perm]; 
 		    });
 		    return result;
@@ -25,7 +27,7 @@ app.controller('MainCtrl', function ($scope, androidapps, simplepermissions) {
 		var sel = _.cloneDeep(item);
 		sel.permissions = merge(sel);
 		$scope.selected_app = sel;
-		$scope.term = item.name;
+		$scope.term = "";
 	};
 
 	$scope.select($scope.apps[1]);

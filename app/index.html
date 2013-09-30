@@ -12,9 +12,14 @@
     <meta name="viewport" content="width=device-width">
     
     <!-- build:css(.tmp) styles/bootstrap.css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" >
+    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
     <!-- endbuild -->
+
+    <!-- build:css(.tmp) styles/font-awesome.css -->
+    <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- endbuild -->
+
     <link rel="stylesheet" href="styles/main.css">
 </head>
   <body ng-app="INF8405App">
@@ -41,12 +46,15 @@
     </nav>
   </header>
 
-  <article class="container app" ng-show="selected_app !== null">
+  <article class="app" ng-show="selected_app !== null">
+    <img ng-src="{{ selected_app.img }}"><h3 class="name">{{ selected_app.name }}</h3>
     <dl>
-      <dt ng-repeat-start="(group_text, group) in selected_app.permissions">{{ group_text }}</dt>
+      <dt class="group" ng-repeat-start="(group_text, group) in selected_app.permissions">
+        <i class="icon-globe"></i>{{ group_text }}
+      </dt>
       <dd ng-repeat-end>
         <ol>
-          <li ng-repeat="perm_text in group">
+          <li class="perm" ng-repeat="perm_text in group.perm">
             {{ perm_text }}
           </li>
         </ol>

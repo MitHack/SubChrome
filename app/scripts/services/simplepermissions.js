@@ -20,6 +20,7 @@ app.factory('simplepermissions', function() {
 },
 "network": {
 	"text": "Network communication",
+	"icon": "globe",
 	"perms": {
 		"view": "view network connections",
 		"data": "receive data from Internet",
