@@ -11,8 +11,7 @@ app.factory('androidapps', function() {
             "img": "https://lh6.ggpht.com/9z5Z-pZHyyow0nUlhfgfwqlNcyjlabLgch84klUVyLl0okW3GJhTXBkLxXdCywKE2Q=w300-rw",
             "name": "Puzzle Retreat",
             "perms": {
-                
-
+                "network": ["view", "full"]
             }
         }
     ];
@@ -26,3 +25,30 @@ app.factory('androidapps', function() {
 	}
   }
 });
+
+
+// var app_perms = {
+//     "network": ["view", "full"],
+//     "phone_calls": ["call"]
+// }
+
+
+// var mypermissions = {
+//     "network": {
+//         "text": "Network communication",
+//         "perms": {
+//             "view": "view network connections",
+//             "data": "receive data from Internet",
+//             "full": "full network access",
+//             "download": "download files without notification",
+//             "view_wifi": "view Wi-Fi connections"
+//         }
+//     },
+//     "phone_calls": {
+//         "text": "Phone calls",
+//         "perms": {
+//             "call": "directly call phone numbers",
+//             "status": "read phone status and identity"
+//         }
+//     }
+// }

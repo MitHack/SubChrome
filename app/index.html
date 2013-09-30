@@ -41,8 +41,17 @@
     </nav>
   </header>
 
-  <article ng-show="selected !== null">
-    <h1><img ng-src="{{ selected.img }}">{{ selected.name }}</h1>
+  <article class="container app" ng-show="selected_app !== null">
+    <dl>
+      <dt ng-repeat-start="(group_text, group) in selected_app.permissions">{{ group_text }}</dt>
+      <dd ng-repeat-end>
+        <ol>
+          <li ng-repeat="perm_text in group">
+            {{ perm_text }}
+          </li>
+        </ol>
+      </dd>
+    </dl>
   </article>
 </section>
     <script>
@@ -57,10 +66,12 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/services/androidapps.js"></script>
+    <script src="scripts/services/simplepermissions.js"></script>
     <script src="scripts/directives/typeahead.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
