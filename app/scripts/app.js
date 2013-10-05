@@ -5,7 +5,7 @@ function hereDoc(f) {
 	  replace(/\*\/[^\/]+$/, '');
 }
 
-var app = angular.module('INF8405App', []);
+var app = angular.module('TheApp', []);
 // app.config(function ($routeProvider) {
 //   $routeProvider
 //     .when('/', {
