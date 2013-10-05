@@ -1,34 +1,16 @@
 'use strict';
 
-// $scope.permissions = permissions.all(); permissions
-app.controller('MainCtrl', function ($scope, androidapps, simplepermissions) {
-	var permissions = simplepermissions.all();
-	$scope.apps = androidapps.all();
-	$scope.selected_app = null;
+app.controller('MainCtrl', function ($scope) {
+	$scope.commands = [1,2,3];
+	$scope.command = null;
 	$scope.term = "";
 
-	function merge(selected_app){
-		return _.transform(selected_app.perms, function(result, perms, group){ 
-		    result[permissions[group].text] = result[permissions[group].text] || {};
-		    result[permissions[group].text].icon = permissions[group].icon
-		    result[permissions[group].text].perm = _.transform(perms, function(result,approval, perm){ 
-		    	result[permissions[group].perms[perm]] = approval;
-		        return result;
-		    });
-		    return result;
-		});
-	};
-
 	$scope.search = function(term) {
-		$scope.apps = androidapps.query(term);
+		$scope.commands = [1,2,3];
 	};
 
 	$scope.select = function(item) {
-		var sel = _.cloneDeep(item);
-		sel.permissions = merge(sel);
-		$scope.selected_app = sel;
+		$scope.command = item;
 		$scope.term = "";
 	};
-
-	$scope.select($scope.apps[0]);
 });
