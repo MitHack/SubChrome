@@ -1,14 +1,10 @@
 'use strict';
 
 app.controller('MainCtrl', function ($scope) {
-	var commands = [
-		"update status",
-		"add photos or videos",
-		"go back to home page",
-		"edit profile",
-		"go to your photos",
-		"friend requests"
-	];
+	var commands = null;
+    if (site) {
+        commands = site.actions;
+    }
 
 	$scope.commands = commands;
 	$scope.command = null;
@@ -16,7 +12,7 @@ app.controller('MainCtrl', function ($scope) {
 
 	$scope.search = function(term) {
 		$scope.commands = _.filter(commands, function(v){
-			return v.toLowerCase().indexOf(term.toLowerCase()) !== -1;
+			return v.name.toLowerCase().indexOf(term.toLowerCase()) !== -1;
 		});
 	};
 
