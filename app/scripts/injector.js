@@ -3,7 +3,7 @@ $(document).ready(function() {
   $("body").css("background-color", "#FF0000");
   
   window.setTimeout(function() {
-    var composeBtn = $("div:contains('COMPOSE')[role='button']");
+    var composeBtn = $("#fbNotificationsJewel").children("a")[0];
     composeBtn.click();
-  }, 5000);
+  }, 100);
 });
