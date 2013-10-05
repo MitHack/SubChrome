@@ -1,12 +1,22 @@
-$(document).ready(function() {
-  console.log("YO");
-  $("body").css("background-color", "#FF0000");
-  
-  if (site) {
-    // populate the menu
-  }
-  window.setTimeout(function() {
-    var composeBtn = $("#fbNotificationsJewel").children("a")[0];
-    composeBtn.click();
-  }, 100);
-});
+(function(){
+
+	function hereDoc(f) {
+		return f.toString().
+		  replace(/^[^\/]+\/\*!?/, '').
+		  replace(/\*\/[^\/]+$/, '');
+	}
+	var inject = hereDoc(function() {
+	/*!
+<typeahead class="search" items="commands" term="term" search="search(term)" select="select(item)">
+  <ul>
+    <li typeahead-item="command" ng-repeat="command in commands" class="results">
+      <h3 class="name">{{ command }}</h3>
+    </li>
+  </ul>
+</typeahead>
+	*/});
+	var div = $("<div>").html(inject)[0];
+	angular.bootstrap(div, ['TheApp']);
+
+	$(document.body).prepend(div);
+})();
