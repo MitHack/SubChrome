@@ -25,6 +25,7 @@ header .search input[type=text] {
 }
 header .search .dropdown {
   margin-top: -20px;
+  border: 1px solid black;
 }
 header .search ul {
   margin: 0;

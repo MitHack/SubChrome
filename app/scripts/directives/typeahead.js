@@ -10,9 +10,10 @@ app.directive('typeahead', ["$timeout", function($timeout) {
             items: "=",
             term: "="
         },
-        controller: ["$scope", function($scope) {
+        controller: ["$scope", "keyboardManager", function($scope, keyboardManager) {
             $scope.items = [];
             $scope.hide = false;
+            $scope.showme = false;
 
             this.activate = function(item) {
                 $scope.active = item;
@@ -40,16 +41,27 @@ app.directive('typeahead', ["$timeout", function($timeout) {
                 $scope.hide = true;
                 $scope.focused = true;
                 $scope.select({item:item});
+                $scope.showme = false;
             };
 
             $scope.isVisible = function() {
-                return !$scope.hide && ($scope.focused || $scope.mousedOver);
+                return true;//!$scope.hide && ($scope.focused || $scope.mousedOver);
             };
 
             $scope.query = function() {
                 $scope.hide = false;
                 $scope.search({term:$scope.term});
             }
+
+            var open = function(){
+                $scope.showme = !$scope.showme;
+                if($scope.showme) {
+                    $scope.query();
+                }
+            }
+
+            keyboardManager.bind('meta+shift+p',open);
+            keyboardManager.bind('ctrl+shift+p',open);
         }],
 
         link: function(scope, element, attrs, controller) {
@@ -79,7 +91,10 @@ app.directive('typeahead', ["$timeout", function($timeout) {
                 }
 
                 if (e.keyCode === 27) {
-                    scope.$apply(function() { scope.hide = true; });
+                    scope.$apply(function() { 
+                        scope.hide = true; 
+                        scope.showme = false;
+                    });
                 }
             });
 
@@ -109,14 +124,18 @@ app.directive('typeahead', ["$timeout", function($timeout) {
                 }
             });
 
+            scope.$watch('showme',function(show){
+                if(show) {
+                    element.css('display', 'block');
+                    $input.focus();
+                } else {
+                    element.css('display', 'none');
+                }
+            });
+
             scope.$watch('isVisible()', function(visible) {
                 if (visible) {
-                    // var pos = $input.position();
-                    // var height = $input[0].offsetHeight;
-
                     $list.css({
-                        // top: pos.top + height,
-                        // left: pos.left,
                         width: '100%',
                         position: 'absolute',
                         display: 'block'
