@@ -9,8 +9,12 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://*.facebook.com/*"],
+      "matches": ["*://*/*"],
       "js": ["bower_components/jquery/jquery.js", "scripts/injector.js"]
+    },
+    {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["scripts/sites/facebook.js"]
     }
   ],
   "browser_action": {
