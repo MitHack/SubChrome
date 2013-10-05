@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log("YO");
-  $("body").css("background-color", "#FF0000");
+
   
   if (site) {
     // populate the menu
