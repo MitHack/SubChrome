@@ -1,8 +1,6 @@
 body {
   font-size: 20px;
   margin: 5px;
-  color: white;
-  background-color: black;
 }
 dl,
 dd {
@@ -29,7 +27,6 @@ header .search .dropdown {
   margin-top: -20px;
 }
 header .search ul {
-  background-color: #444444;
   margin: 0;
   padding: 0;
   list-style: none;
