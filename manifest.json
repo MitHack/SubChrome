@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+
+  "name": "SubChrome",
+  "description": "This extension lets you use action shortcuts similar to Sublime Text.",
+  "version": "1.0",
+
+  "permissions": [
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
