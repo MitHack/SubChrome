@@ -22,7 +22,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
 
 	$scope.select = function(item) {
 		if(item.type == "search") {
-			$window.location = site.searchurl + $scope.term;
+			$window.location = site.searchurl + encodeURIComponent($scope.term);
 			return;
 		}
 
