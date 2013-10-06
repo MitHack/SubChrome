@@ -13,6 +13,10 @@
       "js": ["scripts/sites/facebook.js"]
     },
     {
+      "matches": ["*://*.twitter.com/*"],
+      "js": ["scripts/sites/twitter.js"]
+    },
+    {
       "matches": ["<all_urls>","http://*/*","https://*/*"],
       "css": [
         "styles/main.css"
