@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', function ($scope) {
+app.controller('MainCtrl', function ($scope, $timeout) {
 	$scope.commands = site.commands;
 	$scope.command = null;
 	$scope.term = "";
@@ -16,10 +16,10 @@ app.controller('MainCtrl', function ($scope) {
 		$scope.term = "";
 		$(item.targetEl)[0].click();
 		var foo = $(item.targetEl);
-		// if(item.focusEl){
-		// 	$timeout(fgounction(){
-		// 		$(item.focusEl).focus();
-		// 	},400);
-		// }
+		if(item.focusEl){
+			$timeout(function(){
+				$(item.focusEl).focus();
+			},400);
+		}
 	};
 });
