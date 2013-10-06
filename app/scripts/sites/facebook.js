@@ -31,8 +31,8 @@ var site =
     {
       name: "Update Status",
       type: "click",
-      targetEl: "pagelet_composer a:contains('Update Status')",
-      focusEl: ""
+      targetEl: "#pagelet_composer a:contains('Update Status')",
+      focusEl: "#pagelet_composer textarea"
     },
     {
       name: "Add Photos or video",
