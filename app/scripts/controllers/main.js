@@ -7,7 +7,7 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
 
 	$scope.search = function(term) {
         if (_.isUndefined(site)) return;
-        
+
 		$scope.commands = _.filter(site.commands, function(v){
 			return v.name.toLowerCase().indexOf(term.toLowerCase()) !== -1;
 		})
@@ -37,7 +37,10 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
 				}
 				return false;
 			})
+		} else {
+			elem = $(item.targetEl);
 		}
+
 		if(_.isNull(elem)){
 			return;
 		}
