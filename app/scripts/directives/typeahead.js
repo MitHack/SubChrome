@@ -73,12 +73,12 @@ app.directive('typeahead', ["$timeout", function($timeout) {
             var $list = element.find('> div');
 
             $input.bind('focus', function() {
-                $(".dropdown-menu").dropdown("toggle");
+                $("#SubChrome .dropdown-menu").dropdown("toggle");
                 scope.$apply(function() { scope.focused = true; });
             });
 
             $input.bind('blur', function() {
-                $(".dropdown-menu").dropdown("toggle");
+                $("#SubChrome .dropdown-menu").dropdown("toggle");
                 scope.$apply(function() { scope.focused = false; });
             });
 
