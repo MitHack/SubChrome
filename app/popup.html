@@ -39,13 +39,13 @@
                    term="term" search="search(term)" select="select(item)">     
           <ul>
               <li typeahead-item="command" ng-repeat="command in commands" class="results">
-                  <h3 class="name">{{ command }}</h3>
+                  <h3 class="name">{{ command.name }}</h3>
               </li>
           </ul>
         </typeahead>
     </nav>
   </header>
-  <h1>{{ command }}</h1>
+  <h1>{{ command.name }}</h1>
 </section>
     
     <script src="bower_components/jquery/jquery.js"></script>
@@ -58,5 +58,7 @@
     <script src="scripts/directives/typeahead.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
+    <!-- DELETE THIS! -->
+    <script src="scripts/sites/facebook.js"></script>
 </body>
 </html>
