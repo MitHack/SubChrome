@@ -3,7 +3,7 @@ app.directive('typeahead', ["$timeout", function($timeout) {
         restrict: 'E',
         transclude: true,
         replace: true,
-        template: '<div><form><input class="form-control" autofocus="autofocus" placeholder="Search for apps (ex: Facebook)" ng-model="term" ng-click="query()" ng-change="query()" type="text" autocomplete="off" /></form><div class="dropdown" ng-transclude></div></div>',
+        template: '<div><form><input class="form-control" placeholder="Search for apps (ex: Facebook)" ng-model="term" ng-click="query()" ng-change="query()" type="text" autocomplete="off" /></form><div class="dropdown" ng-transclude></div></div>',
         scope: {
             search: "&",
             select: "&",
@@ -45,7 +45,7 @@ app.directive('typeahead', ["$timeout", function($timeout) {
             };
 
             $scope.isVisible = function() {
-                return true;//!$scope.hide && ($scope.focused || $scope.mousedOver);
+                return !$scope.hide && ($scope.focused || $scope.mousedOver);
             };
 
             $scope.query = function() {
@@ -57,6 +57,7 @@ app.directive('typeahead', ["$timeout", function($timeout) {
                 $scope.showme = !$scope.showme;
                 if($scope.showme) {
                     $scope.query();
+                    $scope.focused = true;
                 }
             }
 
@@ -127,7 +128,6 @@ app.directive('typeahead', ["$timeout", function($timeout) {
             scope.$watch('showme',function(show){
                 if(show) {
                     element.css('display', 'block');
-                    $input.focus();
                 } else {
                     element.css('display', 'none');
                 }

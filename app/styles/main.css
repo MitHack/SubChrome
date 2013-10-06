@@ -1,89 +1,93 @@
-body {
+#SubChrome {
+  position: fixed;
+  z-index: 999999999;
+}
+#SubChrome body {
   font-size: 20px;
   margin: 5px;
 }
-dl,
-dd {
+#SubChrome dl,
+#SubChrome dd {
   margin-left: 10px;
 }
-.form-control {
+#SubChrome .form-control {
   width: 100%;
 }
-header {
+#SubChrome {
   padding: 5px;
 }
-header .search {
+#SubChrome .search {
   position: relative;
   width: 80%;
   margin: 0 auto;
   padding-top: 20px;
 }
-header .search input[type=text] {
+#SubChrome .search input[type=text] {
   font-size: 32px;
   line-height: 36px;
   height: 40px;
 }
-header .search .dropdown {
+#SubChrome .search .dropdown {
   margin-top: -20px;
   border: 1px solid black;
 }
-header .search ul {
+#SubChrome .search ul {
   margin: 0;
   padding: 0;
   list-style: none;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-header .search li:last-of-type {
+#SubChrome .search li:last-of-type {
   padding-bottom: 20px;
 }
-header .search .results {
+#SubChrome .search .results {
   min-height: 64px;
   opacity: 0.35;
 }
-header .search .results.active {
+#SubChrome .search .results.active {
   opacity: 1;
 }
-header .search .results p {
+#SubChrome .search .results p {
   margin-bottom: 5px;
 }
-.app {
+#SubChrome .app {
   margin: 20px;
 }
-.app > i {
+#SubChrome .app > i {
   font-size: 80px;
   vertical-align: middle;
 }
-.app .icon-ok,
-.app .icon-smile {
+#SubChrome .app .icon-ok,
+#SubChrome .app .icon-smile {
   color: green;
 }
-.app .icon-meh,
-.app .icon-minus {
+#SubChrome .app .icon-meh,
+#SubChrome .app .icon-minus {
   color: yellow;
 }
-.app .icon-frown,
-.app .icon-remove {
+#SubChrome .app .icon-frown,
+#SubChrome .app .icon-remove {
   color: red;
 }
-.app img {
+#SubChrome .app img {
   width: 128px;
   height: 128px;
   margin-right: 10px;
   display: inline-block;
 }
-.app .name {
+#SubChrome .app .name {
   display: inline-block;
   vertical-align: middle;
   font-size: 80px;
 }
-.app i {
+#SubChrome .app i {
   margin-right: 10px;
 }
-.app .group {
+#SubChrome .app .group {
   font-size: 64px;
 }
-.app .perm {
+#SubChrome .app .perm {
   font-size: 32px;
   display: block;
 }
