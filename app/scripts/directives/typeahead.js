@@ -60,9 +60,10 @@ app.directive('typeahead', ["$timeout", function($timeout) {
                     $scope.focused = true;
                 }
             }
-
-            keyboardManager.bind('meta+shift+p',open);
-            keyboardManager.bind('ctrl+shift+p',open);
+            if (typeof site !== "undefined") {
+                keyboardManager.bind('meta+shift+p',open);
+                keyboardManager.bind('ctrl+shift+p',open);
+            }
         }],
 
         link: function(scope, element, attrs, controller) {
