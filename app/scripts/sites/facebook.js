@@ -12,6 +12,13 @@ var site = {
       "#pagelet_timeline_profile_actions a[href*='edit']"
     ]},
     { name: "Update Status", targetEl: "#pagelet_composer a:contains('Update Status')", focusEl: "#pagelet_composer textarea" },
+    { name: "Me: Timeline", targetEl: "#fbTimelineHeadline a:first-of-type"},
+    { name: "Me: About", targetEl: "#fbTimelineHeadline a[href*='about']"},
+    { name: "Me: Photos", targetEl: [
+      "#fbTimelineHeadline a[href*='photo']",
+      "#navItem_app_2305272732 [aria-label='Photos']"
+    ]},
+    { name: "Me: Friends", targetEl: "#fbTimelineHeadline a[href*='friends']"},
     { name: "Add Photos or video", targetEl: "#pagelet_composer a:contains('Add Photos/Video')" },
     { name: "Privacy", targetEl: "#navPrivacy a" },
     { name: "Settings: Create an Ad", targetEl: "#userNavigation a:contains('Create an Ad')"},
@@ -35,13 +42,6 @@ var site = {
     { name: "Friend Bar: Search friend", targetEl: "#pagelet_sidebar [aria-label='Search']" },
     { name: "Friend Bar: Settings", targetEl: "#pagelet_sidebar [aria-label='Options']" },
     { name: "Friend Bar: Hide", targetEl: "#pagelet_sidebar [aria-label='Hide sidebar']"},
-    { name: "Friend Bar: Show", targetEl: "#fbDockChatBuddylistNub [rel='toggle']"},
-    { name: "Me: Timeline", targetEl: "#fbTimelineHeadline a:first-of-type"},
-    { name: "Me: About", targetEl: "#fbTimelineHeadline a[href*='about']"},
-    { name: "Me: Photos", targetEl: [
-      "#fbTimelineHeadline a[href*='photo']",
-      "#navItem_app_2305272732 [aria-label='Photos']"
-    ]},
-    { name: "Me: Friends", targetEl: "#fbTimelineHeadline a[href*='friends']"}
+    { name: "Friend Bar: Show", targetEl: "#fbDockChatBuddylistNub [rel='toggle']"}
   ]
 };
