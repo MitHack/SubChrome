@@ -26,7 +26,7 @@
 <section ng-controller="MainCtrl" id='SubChrome'>
   <header>
     <nav class="dropdown">
-        <typeahead class="search" items="commands"
+        <typeahead class="qsearch" items="commands"
                    term="term" search="search(term)" select="select(item)">     
           <ul class="dropdown-menu" role="menu">
               <li typeahead-item="command" ng-repeat="command in commands" role="presentation" class="results">
