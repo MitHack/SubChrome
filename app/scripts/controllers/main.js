@@ -1,17 +1,12 @@
 'use strict';
 
 app.controller('MainCtrl', function ($scope) {
-	var commands = null;
-    if (site) {
-        commands = site.actions;
-    }
-
-	$scope.commands = commands;
+	$scope.commands = site.commands;
 	$scope.command = null;
 	$scope.term = "";
 
 	$scope.search = function(term) {
-		$scope.commands = _.filter(commands, function(v){
+		$scope.commands = _.filter(site.commands, function(v){
 			return v.name.toLowerCase().indexOf(term.toLowerCase()) !== -1;
 		});
 	};
@@ -19,5 +14,12 @@ app.controller('MainCtrl', function ($scope) {
 	$scope.select = function(item) {
 		$scope.command = item;
 		$scope.term = "";
+		$(item.targetEl)[0].click();
+		var foo = $(item.targetEl);
+		// if(item.focusEl){
+		// 	$timeout(fgounction(){
+		// 		$(item.focusEl).focus();
+		// 	},400);
+		// }
 	};
 });

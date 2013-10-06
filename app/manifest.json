@@ -9,6 +9,10 @@
   ],
   "content_scripts": [
     {
+      "matches": ["*://*.facebook.com/*"],
+      "js": ["scripts/sites/facebook.js"]
+    },
+    {
       "matches": ["<all_urls>","http://*/*","https://*/*"],
       "css": [
         "styles/main.css"
@@ -23,10 +27,6 @@
         "scripts/controllers/main.js",
         "scripts/injector.js"
       ]
-    },
-    {
-      "matches": ["*://*.facebook.com/*"],
-      "js": ["scripts/sites/facebook.js"]
     }
   ],
   "browser_action": {

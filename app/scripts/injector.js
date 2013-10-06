@@ -11,7 +11,7 @@
 	<typeahead class="search" items="commands" term="term" search="search(term)" select="select(item)">
 	  <ul>
 	    <li typeahead-item="command" ng-repeat="command in commands" class="results">
-	      <h3 class="name">{{ command }}</h3>
+	      <h3 class="name">{{ command.name }}</h3>
 	    </li>
 	  </ul>
 	</typeahead>

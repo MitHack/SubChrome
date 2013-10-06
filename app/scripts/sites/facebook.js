@@ -1,8 +1,7 @@
-var site =
-{
+var site = {
   name: "Facebook",
-  urlPattern: "*://*.facebook.com",
-  actions: [
+  searchbarEl: "todo",
+  commands: [
     {
       name: "Notifications",
       type: "click",
@@ -11,12 +10,12 @@ var site =
     {
       name: "Messages",
       type: "click",
-      targetEl: "#fbMesssagesJewel"
+      targetEl: "#fbMessagesJewel a"
     },
     {
       name: "Requests",
       type: "click",
-      targetEl: "#fbRequestsJewel"    
+      targetEl: "#fbRequestsJewel a"    
     },
     {
       name: "Homepage",
