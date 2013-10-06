@@ -1,11 +1,11 @@
 var site = {
   name: "Facebook",
-  searchbarEl: "todo",
+  searchurl: "/search/more/?q=",
   commands: [
     {
       name: "Notifications",
       type: "click",
-      targetEl: "#fbNotificationsJewel"
+      targetEl: "#fbNotificationsJewel a"
     },
     {
       name: "Messages",

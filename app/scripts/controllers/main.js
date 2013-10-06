@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainCtrl', function ($scope, $timeout) {
+app.controller('MainCtrl', function ($scope, $timeout, $window) {
 	$scope.commands = typeof site !== "undefined" ? site.commands : null;
 	$scope.command = null;
 	$scope.term = "";
@@ -9,10 +9,21 @@ app.controller('MainCtrl', function ($scope, $timeout) {
         if (typeof site === "undefined") return;
 		$scope.commands = _.filter(site.commands, function(v){
 			return v.name.toLowerCase().indexOf(term.toLowerCase()) !== -1;
-		});
+		})
+		if(term !== "") {
+			$scope.commands = $scope.commands.concat({
+	      		name: "Search for \"" + term + "\"",
+	      		type: "search"
+    		});
+		}
 	};
 
 	$scope.select = function(item) {
+		if(item.type == "search") {
+			$window.location = site.searchurl + $scope.term;
+			return;
+		}
+
 		$scope.command = item;
 		$scope.term = "";
 		var elem = $(item.targetEl);
