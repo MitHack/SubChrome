@@ -1,6 +1,5 @@
 'use strict';
 
-
 app.controller('MainCtrl', function ($scope, $timeout) {
 	$scope.commands = typeof site !== "undefined" ? site.commands : null;
 	$scope.command = null;

@@ -39,7 +39,7 @@ app.directive('typeahead', ["$timeout", function($timeout) {
 
             this.select = function(item) {
                 $scope.hide = true;
-                $scope.focused = true;
+                $scope.focused = false;
                 $scope.select({item:item});
                 $scope.showme = false;
             };
