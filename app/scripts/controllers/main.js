@@ -1,12 +1,13 @@
 'use strict';
 
 app.controller('MainCtrl', function ($scope, $timeout, $window) {
-	$scope.commands = typeof site !== "undefined" ? site.commands : null;
+	$scope.commands = _.isUndefined(site) ? site.commands : null;
 	$scope.command = null;
 	$scope.term = "";
 
 	$scope.search = function(term) {
-        if (typeof site === "undefined") return;
+        if (_.isUndefined(site)) return;
+        
 		$scope.commands = _.filter(site.commands, function(v){
 			return v.name.toLowerCase().indexOf(term.toLowerCase()) !== -1;
 		})
@@ -26,7 +27,20 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
 
 		$scope.command = item;
 		$scope.term = "";
-		var elem = $(item.targetEl);
+		var elem = null;
+		if(_.isArray(item.targetEl)){
+			_.find(item.targetEl, function(selector){
+				var e = $(selector);
+				if(e.length !== 0){
+					elem = e;
+					return true;
+				}
+				return false;
+			})
+		}
+		if(_.isNull(elem)){
+			return;
+		}
 
 		function highlight(elem){
 			var originalBorder = elem.css("border");

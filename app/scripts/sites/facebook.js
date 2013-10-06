@@ -7,7 +7,10 @@ var site = {
     { name: "Requests", targetEl: "#fbRequestsJewel a" },
     { name: "Home", targetEl: "#pageLogo a" },
     { name: "View Profile", targetEl: "#navTimeline a" },
-    { name: "Edit Profile", targetEl: "#pagelet_welcome_box a:contains('Edit Profile')" },
+    { name: "Edit Profile", targetEl: [
+      "#pagelet_welcome_box a:contains('Edit Profile')",
+      "#pagelet_timeline_profile_actions a[href*='edit']"
+    ]},
     { name: "Update Status", targetEl: "#pagelet_composer a:contains('Update Status')", focusEl: "#pagelet_composer textarea" },
     { name: "Add Photos or video", targetEl: "#pagelet_composer a:contains('Add Photos/Video')" },
     { name: "Privacy", targetEl: "#navPrivacy a" },
