@@ -15,6 +15,7 @@
 }
 #SubChrome {
   padding: 5px;
+  width: 100%;
 }
 #SubChrome .search {
   position: relative;
@@ -28,8 +29,9 @@
   height: 40px;
 }
 #SubChrome .search .dropdown {
-  margin-top: -20px;
+  margin-top: -5px;
   border: 1px solid black;
+  background-color: white;
 }
 #SubChrome .search ul {
   margin: 0;
