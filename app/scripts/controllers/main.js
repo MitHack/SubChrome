@@ -15,9 +15,22 @@ app.controller('MainCtrl', function ($scope, $timeout) {
 	$scope.select = function(item) {
 		$scope.command = item;
 		$scope.term = "";
-		$(item.targetEl)[0].click();
-		var foo = $(item.targetEl);
+		var elem = $(item.targetEl);
+
+		function highlight(elem){
+			var originalBorder = elem.css("border");
+			elem.css("border","5px solid yellow");
+			$timeout(function(){
+				elem.css("border",originalBorder);
+			},2000);
+		}
+
+		if(elem.length) {
+			elem[0].click();
+			highlight(elem);
+		}
 		if(item.focusEl){
+			highlight($(item.focusEl));
 			$timeout(function(){
 				$(item.focusEl).focus();
 			},400);

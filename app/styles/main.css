@@ -24,8 +24,6 @@
   padding-top: 20px;
 }
 #SubChrome .search input[type=text] {
-  font-size: 32px;
-  line-height: 36px;
   height: 40px;
 }
 #SubChrome .search .dropdown {
@@ -44,7 +42,6 @@
   padding-bottom: 20px;
 }
 #SubChrome .search .results {
-  min-height: 64px;
   opacity: 0.35;
 }
 #SubChrome .search .results.active {
