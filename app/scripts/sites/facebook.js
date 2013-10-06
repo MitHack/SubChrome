@@ -22,7 +22,6 @@ var site = {
     { name: "Favorites: News Feed", targetEl: "#navItem_app_4748854339 [aria-label='News Feed']"},
     { name: "Favorites: Messages", targetEl: "#navItem_app_217974574879787 [aria-label='Messages']"},
     { name: "Favorites: Events", targetEl: "#navItem_app_2344061033 [aria-label='Events']"},
-    { name: "Favorites: Photos", targetEl: "#navItem_app_2305272732 [aria-label='Photos']"},
     { name: "Favorites: Browse", targetEl: "#navItem_app_300909120010335 [aria-label='Browse']"},
     { name: "Groups: Create Group...", targetEl: "#navItem_app_230259100322928 [aria-label='Create Group...']"},
     { name: "Apps: App Center", targetEl: "#navItem_app_140332009231 [aria-label='App Center']"},
@@ -33,9 +32,16 @@ var site = {
     { name: "Pages: Create a Page...", targetEl: "#navItem_app_188619144602540 [aria-label='Create a Page...']"},
     { name: "Pages: Pages Feed", targetEl: "#navItem_app_140472815972081 [aria-label='Pages Feed']"},
     { name: "Pages: Like Pages", targetEl: "#navItem_app_357937250942127 [aria-label='Like Pages']"},
-    { name: "Friend Bar: Search friend", targetEl: "#" },
+    { name: "Friend Bar: Search friend", targetEl: "#pagelet_sidebar [aria-label='Search']" },
     { name: "Friend Bar: Settings", targetEl: "#pagelet_sidebar [aria-label='Options']" },
     { name: "Friend Bar: Hide", targetEl: "#pagelet_sidebar [aria-label='Hide sidebar']"},
-    { name: "Friend Bar: Show", targetEl: "#fbDockChatBuddylistNub [rel='toggle']"}
+    { name: "Friend Bar: Show", targetEl: "#fbDockChatBuddylistNub [rel='toggle']"},
+    { name: "Me: Timeline", targetEl: "#fbTimelineHeadline a:first-of-type"},
+    { name: "Me: About", targetEl: "#fbTimelineHeadline a[href*='about']"},
+    { name: "Me: Photos", targetEl: [
+      "#fbTimelineHeadline a[href*='photo']",
+      "#navItem_app_2305272732 [aria-label='Photos']"
+    ]},
+    { name: "Me: Friends", targetEl: "#fbTimelineHeadline a[href*='friends']"}
   ]
 };
