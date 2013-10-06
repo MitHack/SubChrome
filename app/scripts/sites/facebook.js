@@ -31,12 +31,13 @@ var site =
     {
       name: "Update Status",
       type: "click",
-      targetEl: "#pagelet_composer a:contains('')"    
+      targetEl: "pagelet_composer a:contains('Update Status')",
+      focusEl: ""
     },
     {
       name: "Add Photos or video",
       type: "click",
-      targetEl: "#fbRequestsJewel"    
+      targetEl: "#pagelet_composer a:contains('Add Photos/Video')"    
     } 
   ]
 };
