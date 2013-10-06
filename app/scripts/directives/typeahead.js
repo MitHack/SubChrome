@@ -55,6 +55,7 @@ app.directive('typeahead', ["$timeout", function($timeout) {
 
             var open = function(){
                 $scope.showme = !$scope.showme;
+                
                 if($scope.showme) {
                     $scope.query();
                     $scope.focused = true;
@@ -72,10 +73,12 @@ app.directive('typeahead', ["$timeout", function($timeout) {
             var $list = element.find('> div');
 
             $input.bind('focus', function() {
+                $(".dropdown-menu").dropdown("toggle");
                 scope.$apply(function() { scope.focused = true; });
             });
 
             $input.bind('blur', function() {
+                $(".dropdown-menu").dropdown("toggle");
                 scope.$apply(function() { scope.focused = false; });
             });
 

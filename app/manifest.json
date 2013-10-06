@@ -25,6 +25,7 @@
         "bower_components/jquery/jquery.js", 
         "bower_components/angular/angular.js",
         "bower_components/lodash/dist/lodash.js",
+        "bower_components/bootstrap/js/bootstrap-dropdown.js",
         "scripts/app.js",
         "scripts/services/keyboardManager.js",
         "scripts/directives/typeahead.js",
