@@ -6,11 +6,29 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
 	$scope.command = null;
 	$scope.term = "";
 
+	function findElem(command){
+		var elem = null;
+		if(_.isArray(command.targetEl)){
+			_.find(command.targetEl, function(selector){
+				var e = $(selector);
+				if(e.length !== 0){
+					elem = e;
+					return true;
+				}
+				return false;
+			})
+		} else {
+			elem = $(command.targetEl);
+		}
+		return elem;
+	}
+
 	$scope.search = function(term) {
         if (typeof site === "undefined") return;
 
-		$scope.commands = _.filter(site.commands, function(v){
-			return v.name.toLowerCase().indexOf(term.toLowerCase()) !== -1;
+		$scope.commands = _.filter(site.commands, function(command){
+			return command.name.toLowerCase().indexOf(term.toLowerCase()) !== -1 &&
+				0 !== findElem(command).length;
 		})
 		if(term !== "") {
 			$scope.commands = $scope.commands.concat({
@@ -28,21 +46,10 @@ app.controller('MainCtrl', function ($scope, $timeout, $window) {
 
 		$scope.command = item;
 		$scope.term = "";
-		var elem = null;
-		if(_.isArray(item.targetEl)){
-			_.find(item.targetEl, function(selector){
-				var e = $(selector);
-				if(e.length !== 0){
-					elem = e;
-					return true;
-				}
-				return false;
-			})
-		} else {
-			elem = $(item.targetEl);
-		}
+		
+		var elem = findElem(command);
 
-		if(_.isNull(elem)){
+		if(0 !== elem.length){
 			return;
 		}
 
