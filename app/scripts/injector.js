@@ -11,7 +11,7 @@
 	<typeahead class="qsearch" items="commands" term="term" search="search(term)" select="select(item)">
 	  <ul class="dropdown-menu" role="menu">
 	    <li typeahead-item="command" ng-repeat="command in commands" role="presentation" class="results">
-	       <a href="#" role="menuitem" class="name">{{ command.name }}</a>
+	       <div role="menuitem" class="name">{{ command.innerText }}</div>
 	    </li>
 	  </ul>
 	</typeahead>
